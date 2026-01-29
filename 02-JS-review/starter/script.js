@@ -142,3 +142,38 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+const book = getBook(1);
+
+const { title, author, genres, } = book;
+
+book;
+
+const [p, s, ...o] = genres;
+
+
+const newGenres = [...genres, "Epic fantasy"]
+console.log(newGenres)
+
+const updatedBook = { ...book, mpd: "2001-12-19", pages: 1210 };
+updatedBook;
+
+var arr = [1, 2, 3, 4, 5]
+arr = arr.reduce((acc, val) => acc + val)
+arr;
+
+const newArr = arr.pop;
+newArr;
+
+
+const books = getBooks();
+books;
+
+const updatedBooks = books;
+
+
+
+
+
+
+
