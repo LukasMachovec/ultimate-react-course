@@ -10,6 +10,15 @@ export default function App() {
   const [step, setStep] = React.useState(1);
   const [isOpen, setIsOpen] = React.useState(true);
 
+  function handlePrevious() {
+    if (step > 1) { setStep(() => step - 1) }
+  }
+
+  function handleNext() {
+    if (step < 3) { setStep(() => step + 1) }
+  }
+
+
   return (
     <>
       <button className="close" onClick={() => setIsOpen(!isOpen)}>&times;</button>
@@ -22,8 +31,8 @@ export default function App() {
           </div>
           <p className="message">Step {step}: {messages[step - 1]}</p>
           <div className="buttons">
-            <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={() => step > 1 && setStep(step - 1)}>Previous</button>
-            <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={() => step < 3 && setStep(step + 1)} >Next</button>
+            <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={handlePrevious}>Previous</button>
+            <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={handleNext} >Next</button>
           </div>
         </div >
       )}
