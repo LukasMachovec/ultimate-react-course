@@ -1,7 +1,8 @@
-import { useQuiz } from "../contexts/QuizContext";
+import { useQuiz } from "../QuizContext";
 
 function StartScreen() {
-  const { numQuestions, dispatch } = useQuiz();
+  const { questions, startQuiz } = useQuiz();
+  const numQuestions = questions.length;
 
   return (
     <div className="start">
@@ -9,11 +10,11 @@ function StartScreen() {
       <h3>{numQuestions} questions to test your React mastery</h3>
       <button
         className="btn btn-ui"
-        onClick={() => dispatch({ type: "start" })}
+        onClick={() => startQuiz()}
       >
         Let's start
       </button>
-    </div>
+    </div >
   );
 }
 
